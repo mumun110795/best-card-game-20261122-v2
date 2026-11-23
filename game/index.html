@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breakwater — the Three-Pier Card War</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="stage">
+
+  <!-- ══════════ TITLE ══════════ -->
+  <section id="screen-title" class="screen">
+    <div class="title-lanterns" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <div id="title-crest"></div>
+    <h1 class="game-logo">BREAK<span>WATER</span></h1>
+    <p class="tagline">The three-pier card war for the harbour of Gloaming Bay</p>
+    <div class="houses-row" id="houses-row"></div>
+    <div class="howto">
+      <p><b>Hold the piers.</b> Crews clash pier by pier — the unopposed burn the enemy beacon. First captain to fell <b>two beacons</b> takes the harbour.</p>
+      <p><b>Read the Admiral.</b> Morvane declares his intent every round. Believe him — and counter it.</p>
+      <p><b>Combine.</b> Same-house crews in one pier fight as a <b>Bond</b> (+1 ATK). Three houses standing together raise <b>Resonance</b> (+1 ATK to all).</p>
+    </div>
+    <button id="btn-start" class="big-btn">⚓ SET SAIL</button>
+    <p class="title-foot">A card game of lanes, lanterns and low blows · mouse &amp; keyboard (1–3 choose a pier, Enter sounds the battle)</p>
+  </section>
+
+  <!-- ══════════ TABLE ══════════ -->
+  <section id="screen-table" class="screen hidden">
+    <header class="captain-bar foe-bar">
+      <div class="captain-id" id="foe-id"></div>
+      <div class="foe-hand" id="foe-hand"></div>
+      <div class="bar-stats">
+        <span class="stat-chip" id="foe-deck"></span>
+        <span class="stat-chip round-chip" id="round-badge"></span>
+      </div>
+    </header>
+
+    <div id="intent-banner" class="intent-banner"></div>
+
+    <main id="lanes">
+      <div class="lane" data-lane="0">
+        <div class="beacon-slot" id="beacon-foe-0"></div>
+        <div class="board foe-board" id="board-foe-0"></div>
+        <div class="lane-mid"><span class="lane-name"></span><span class="lane-power" id="power-0"></span></div>
+        <div class="board you-board" id="board-you-0"></div>
+        <div class="beacon-slot" id="beacon-you-0"></div>
+      </div>
+      <div class="lane" data-lane="1">
+        <div class="beacon-slot" id="beacon-foe-1"></div>
+        <div class="board foe-board" id="board-foe-1"></div>
+        <div class="lane-mid"><span class="lane-name"></span><span class="lane-power" id="power-1"></span></div>
+        <div class="board you-board" id="board-you-1"></div>
+        <div class="beacon-slot" id="beacon-you-1"></div>
+      </div>
+      <div class="lane" data-lane="2">
+        <div class="beacon-slot" id="beacon-foe-2"></div>
+        <div class="board foe-board" id="board-foe-2"></div>
+        <div class="lane-mid"><span class="lane-name"></span><span class="lane-power" id="power-2"></span></div>
+        <div class="board you-board" id="board-you-2"></div>
+        <div class="beacon-slot" id="beacon-you-2"></div>
+      </div>
+    </main>
+
+    <div id="ticker" class="ticker">The harbour waits.</div>
+
+    <footer class="you-bar">
+      <div class="captain-id" id="you-id"></div>
+      <div class="you-controls">
+        <div class="tide-row"><span class="tide-label">TIDE</span><span id="tide-pips"></span><span class="stat-chip" id="you-deck"></span><span class="stat-chip resonance hidden" id="resonance-badge">RESONANCE +1 ATK</span></div>
+        <div id="hand" class="hand"></div>
+      </div>
+      <button id="btn-battle" class="battle-btn">⚔ SOUND<br>THE BATTLE</button>
+    </footer>
+  </section>
+
+  <!-- ══════════ END ══════════ -->
+  <section id="screen-end" class="screen hidden">
+    <div id="end-art"></div>
+    <h1 id="end-title"></h1>
+    <p id="end-sub"></p>
+    <div id="end-stats" class="end-stats"></div>
+    <button id="btn-again" class="big-btn">↻ SAIL AGAIN</button>
+  </section>
+
+  <div id="fx-layer" aria-hidden="true"></div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
